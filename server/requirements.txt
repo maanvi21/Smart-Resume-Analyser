@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pdfplumber
+spacy
+nltk
+python-multipart
+
+# all apis
+1. /extract-features
+gets all user entered keywords and gets resume file and text
+2. /nlp-module
+gets the json wih all new data
