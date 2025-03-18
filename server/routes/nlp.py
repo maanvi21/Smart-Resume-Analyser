@@ -1,4 +1,4 @@
-# File for nlp-module endpoint
+# routers/nlp_module.py
 from fastapi import APIRouter, HTTPException
 import json
 import spacy
@@ -9,6 +9,7 @@ router = APIRouter()
 
 @router.get('/nlp-module')
 async def nlp_module():
+    # Your existing code here
     try:
         file_path = Path("uploaded_resume.json").absolute()
         output_file = Path("nlp_results.json").absolute()
