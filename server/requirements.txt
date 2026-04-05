@@ -1,12 +1,16 @@
 fastapi
 uvicorn
 pdfplumber
-spacy
-nltk
 python-multipart
-
+sentence-transformers
+transformers
+torch
+accelerate
+sentencepiece
+protobuf
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 # all apis
-1. /extract-features
-gets all user entered keywords and gets resume file and text
-2. /nlp-module
-gets the json wih all new data
+# 1. /extract-features
+# gets all user entered keywords and gets resume file and text
+# 2. /nlp-module
+# gets the json wih all new data

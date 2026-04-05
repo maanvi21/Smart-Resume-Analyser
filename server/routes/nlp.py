@@ -1,94 +1,114 @@
-# routers/nlp_module.py
-from fastapi import APIRouter, HTTPException
+# routes/resume.py
+from fastapi import APIRouter, File, Form, UploadFile, HTTPException
 import json
-import spacy
-import pytextrank
-from pathlib import Path
+import re
+import pdfplumber
 
 router = APIRouter()
 
-@router.get('/nlp-module')
-async def nlp_module():
-    # Your existing code here
+# Known tech/skill terms to always capture even if NER misses them
+TECH_PATTERN = re.compile(
+    r'\b(python|javascript|typescript|java|c\+\+|c#|ruby|go|rust|swift|kotlin|php|scala|'
+    r'react|angular|vue|next\.?js|nuxt|svelte|node\.?js|express|django|flask|fastapi|spring|'
+    r'postgresql|mysql|mongodb|redis|sqlite|cassandra|dynamodb|firebase|supabase|'
+    r'docker|kubernetes|aws|azure|gcp|terraform|ansible|jenkins|github|gitlab|ci/cd|'
+    r'machine learning|deep learning|nlp|computer vision|tensorflow|pytorch|keras|scikit-learn|'
+    r'pandas|numpy|matplotlib|sql|nosql|graphql|rest|api|microservices|'
+    r'html|css|sass|tailwind|bootstrap|figma|git|linux|bash|'
+    r'agile|scrum|jira|confluence|system design|data structures|algorithms)\b',
+    re.IGNORECASE
+)
+
+def extract_skills_from_jd(jd_text: str) -> list[str]:
+    """
+    Extract actual skills and technologies from a job description using:
+    1. Regex for known tech terms
+    2. BERT NER for org/misc entities (tools, frameworks often tagged as ORG/MISC)
+    Returns a deduplicated, clean list.
+    """
+    found = set()
+
+    # ── 1. Regex: catch known tech stack terms ───────────────────────────────
+    for match in TECH_PATTERN.finditer(jd_text):
+        found.add(match.group(0).lower().strip())
+
+    # ── 2. BERT NER: catch tool/framework names NER recognises ──────────────
     try:
-        file_path = Path("uploaded_resume.json").absolute()
-        output_file = Path("nlp_results.json").absolute()
-        
-        print(f"Starting NLP processing")
-        print(f"Reading from: {file_path}")
-        
-        if not file_path.exists():
-            raise HTTPException(status_code=404, detail="Resume data file not found")
-        
-        with open(file_path, "r", encoding="utf-8") as file:
-            resume_data = json.load(file)
-        
-        if not resume_data.get("text"):
-            raise HTTPException(status_code=400, detail="No resume text found in data")
-        
-        resume_text = resume_data.get("text", "")
-        resume_keywords_requirements = resume_data.get("requirements", [])
-        
-        # Make sure resume text isn't empty
-        if not resume_text:
-            raise HTTPException(status_code=400, detail="No text content found in the resume")
-        
-        # Load spaCy model
-        try:
-            nlp = spacy.load("en_core_web_md")
-        except OSError:
-            # If model not found, try to download it
-            from spacy.cli import download
-            download("en_core_web_md")
-            nlp = spacy.load("en_core_web_md")
-        
-        # Add PyTextRank to pipeline
-        if "textrank" not in nlp.pipe_names:
-            nlp.add_pipe("textrank")
-        
-        # Process text with spaCy
-        nlp_text = nlp(resume_text)
-        
-        # Extract keywords using PyTextRank
-        ranked_phrases = [phrase.text for phrase in nlp_text._.phrases][:20]  # Limit to top 20 phrases
-        
-        # Extract noun chunks and entities
-        noun_keywords = set(chunk.text.lower() for chunk in nlp_text.noun_chunks)
-        ner_keywords = set(ent.text.lower() for ent in nlp_text.ents)
-        
-        # Convert requirements to lowercase for case-insensitive matching
-        requirements_lower = set(req.lower() for req in resume_keywords_requirements)
-        
-        # Find matching keywords
-        matching_noun_keywords = noun_keywords.intersection(requirements_lower)
-        matching_ner_keywords = ner_keywords.intersection(requirements_lower)
-        
-        # Calculate match percentage
-        total_req = len(requirements_lower)
-        matched_req = len(set(matching_noun_keywords).union(matching_ner_keywords))
-        match_percentage = int((matched_req / total_req * 100)) if total_req > 0 else 0
-        
-        # Determine if suitable (e.g., more than 70% match)
-        suitable = match_percentage >= 70
-        
-        # Create result dictionary
-        results = {
-            "ranked_phrases": ranked_phrases,
-            "noun_keywords": list(noun_keywords),
-            "ner_keywords": list(ner_keywords),
-            "matching_noun_keywords": list(matching_noun_keywords),
-            "matching_ner_keywords": list(matching_ner_keywords),
-            "matchPercentage": match_percentage,
-            "suitable": suitable
+        from transformers import pipeline
+        ner = pipeline(
+            "ner",
+            model="dslim/bert-base-NER",
+            aggregation_strategy="simple",
+        )
+        MAX_CHARS = 2000
+        chunks = [jd_text[i:i+MAX_CHARS] for i in range(0, len(jd_text), MAX_CHARS)]
+        for chunk in chunks:
+            entities = ner(chunk)
+            for ent in entities:
+                word = ent.get("word", "").strip()
+                group = ent.get("entity_group", "")
+                # ORG and MISC often contain tool/product names in JDs
+                if group in ("ORG", "MISC") and len(word) > 1:
+                    found.add(word.lower())
+    except Exception:
+        pass  # if NER fails, regex results still carry on
+
+    # ── 3. Clean up ──────────────────────────────────────────────────────────
+    NOISE = {"and", "or", "the", "with", "for", "a", "an", "in", "of", "to",
+             "is", "are", "we", "you", "our", "your", "its", "be", "will"}
+    keywords = sorted([
+        k for k in found
+        if k not in NOISE and len(k) > 1 and not k.isdigit()
+    ])
+
+    return keywords
+
+
+@router.post("/extract-features")
+async def extract_features(
+    file: UploadFile = File(...),
+    requirements: str = Form(...)
+):
+    """
+    Accept a PDF resume + free-form job description paragraph.
+    Uses NER + regex to extract real skills/tech keywords from the JD.
+    """
+    try:
+        if file.content_type != "application/pdf":
+            raise HTTPException(status_code=400, detail="Invalid file type. Only PDFs are accepted.")
+
+        # ── Extract resume text ──────────────────────────────────────────────
+        with pdfplumber.open(file.file) as pdf:
+            pages = [page.extract_text() for page in pdf.pages if page.extract_text()]
+            extracted_text = "\n".join(pages)
+
+        if not extracted_text.strip():
+            raise HTTPException(status_code=422, detail="Could not extract any text from the PDF.")
+
+        # ── Extract keywords from job description ────────────────────────────
+        keywords = extract_skills_from_jd(requirements)
+
+        if not keywords:
+            raise HTTPException(status_code=422, detail="Could not extract any skills from the job description.")
+
+        data = {
+            "filename":        file.filename,
+            "text":            extracted_text,
+            "requirements":    keywords,
+            "job_description": requirements,
         }
-        
-        # Save results to a JSON file
-        print(f"Writing results to: {output_file}")
-        with open(output_file, "w", encoding="utf-8") as json_file:
-            json.dump(results, json_file, indent=4)
-        
-        return results
-        
+
+        with open("uploaded_resume.json", "w", encoding="utf-8") as jf:
+            json.dump(data, jf, indent=4)
+
+        return {
+            "message":            "Resume processed successfully",
+            "pages_extracted":    len(pages),
+            "keywords_extracted": keywords,
+            "requirements_count": len(keywords),
+        }
+
+    except HTTPException:
+        raise
     except Exception as e:
-        print(f"Error in NLP processing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
