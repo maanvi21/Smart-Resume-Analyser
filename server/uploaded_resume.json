@@ -1,23 +1,113 @@
 {
     "filename": "Resume (1).pdf",
-    "text": "Maanvi Shadakshari\nNavi Mumbai\n(cid:131) +91 7208014200 # shadaksharimaanvi@gmail.com (cid:239) LinkedIn \u00a7 GitHub Behance\nEducation\nFr. Conceicao Rodrigues Institute of Technology (FCRIT), Vashi Aug 2023 \u2013 Present\nBachelor of Technology in Computer Engineering CGPA: 9.08\nWork Experience\nKode & Co. Jan 2025 \u2013 Present\nTech and Operations Lead Self-Employed\n\u2022 Founded a digital solutions venture (Portfolio); led client-facing sales meetings for 4 closed projects (2 in pipeline),\napplying consultative sales and digital marketing strategies to understand requirements and close engagements.\n\u2022 Translated client business goals into technical specifications; sourced free/open-source tooling and zero-cost deployment\ninfrastructure to eliminate overhead costs entirely for small business clients.\n\u2022 Architected end-to-end solutions spanning web design, development, deployment, and post-launch support, maintaining a\n100% client retention rate across all completed engagements.\nCIBA, Mumbai Jan 2026 \u2013 Present\nWeb Developer Mumbai\n\u2022 Spearheading the official CIBA website featuring a centralised admin panel and role-based secure authentication;\nintegrated Google Calendar and Gmail APIs via GCP with OAuth 2.0 for automated scheduling and\ncommunication workflows.\n\u2022 Eliminated reliance on a third-party booking app by engineering a fully integrated booking system directly on the\nclient website, reducing end-to-end booking process time by \u02dc60% and consolidating all operations into a single\nplatform.\n\u2022 Gained hands-on exposure to GCP console, API enablement, OAuth consent configuration, and third-party API\nintegration within a production web environment, reducing setup time for future integrations by 30%.\nSVIK IT Solutions and Consultancy Jun 2025 \u2013 Present\nSoftware Engineer Intern Navi Mumbai (Hybrid)\n\u2022 Engineered a scalable full-stack Project Management System (live client product) with a modular architecture for\ncustomisable workflows and Role-Based Access Control (RBAC) supporting 5 to 100 users across flexible\nsubscription plans.\n\u2022 Architected the relational database schema from scratch \u2014 enforced normalised table structures, foreign key\nconstraints, multi-table joins, and indexed queries to ensure data integrity and efficient retrieval across all core\nmodules.\nIndian Institute of Technology, Bombay Jun 2025 \u2013 Jul 2025\nStudent Intern Mumbai\n\u2022 Devised a Video Amplification and Fault Diagnosis tool leveraging CSRT object tracking combined with Fourier\nTransform and Time History analysis to identify vibration anomalies across 3+ machinery types, reducing\nmanual inspection time by \u02dc40%.\n\u2022 Crafted a custom GUI for real-time visualisation and diagnostics, enabling fault identification 2\u00d7 faster than\ntraditional methods and eliminating reliance on manual inspection for engineering teams.\nAltimetrik Jun 2025 \u2013 Jul 2025\nSummer Intern Bengaluru\n\u2022 Collaborated with the Data Engineering and Analytics team to deploy 2 LLM-powered chatbots, slashing internal\nknowledge retrieval time by \u02dc35%; streamlined process automation workflows covering 5+ repetitive tasks and\nstandardised technical documentation across 3 teams.\nZarvisGenix Jun 2024 \u2013 Jul 2024\nMobile App Development Intern Remote\n\u2022 Launched a scan & pay feature integrated with Plaid sandbox, achieving a 30% reduction in transaction time;\nshipped production-ready API integrations in collaboration with design and backend teams, boosting overall dev\nefficiency by 15%.\nArtificial Intelligence & Deep Learning Club, FCRIT Jun 2024 \u2013 Jun 2025\nJr. Technical Coordinator Navi Mumbai\n\u2022 Orchestrated Webrush with 100+ participants, managing technical logistics and web infrastructure end-to-end;\nspearheaded the official HackQuinox website and multiple club platforms.\nAchievements\nTECHNOVA 2025 \u2013 Xavier Institute of Technology Jan 25\u201326, 2025\n\u2022 1st place in App Development \u2014 built Roots, a community social media app connecting users via contacts, location,\nand family graphs.\nHACKTOBER FEST\u201924 \u2013 GDG, Ramrao Adik Institute of Technology October 2024\n\u2022 3rd out of 25 teams (Day 1) and top 5 out of 12 teams (Day 2) in coding and DSA challenges.\nProjects\nAI Email Follow-up Automation System | Firebase, Node.js, React, LLMs, Grok API, Google Sheets API GitHub\n\u2022 Formulated an AI-powered email automation system that generates and schedules contextual follow-ups based on\nuser interaction patterns.\n\u2022 Architected an event-driven workflow engine with trigger-based logic (no-reply, open, response) to automate\nmulti-step communication sequences.\n\u2022 Leveraged a zero-cost scheduling pipeline to eliminate infrastructure overhead entirely, achieving full zero-cost\ndeployment for end users.\nAI-Powered Sales Forecasting System | FastAPI, Next.js, TensorFlow, LSTM, XGBoost, Recharts GitHub\n\u2022 Developed a full-stack demand forecasting and inventory optimization platform using an ensemble model,\ngenerating 30-day forecasts with RMSE of 488 on real-world sales data.\n\u2022 Engineered 30+ features including temporal signals and lag variables to capture demand patterns and improve\nforecasting accuracy.\n\u2022 Shipped an interactive dashboard visualising forecasts and model metrics (RMSE, MAE).\nSmart Resume Analyser | FastAPI, React, SpaCy, Sentence-BERT, Python GitHub\n\u2022 Pioneered an AI-powered ATS analyser that performs semantic matching between resumes and job descriptions.\n\u2022 Executed interpretable AI features by highlighting matched phrases and identifying missing concepts to explain\nscoring decisions.\n\u2022 Generated context-aware optimisation insights to improve resume relevance beyond keyword-based approaches.\nSkin Disease Classifier | PyTorch, CNN, MobileNetV2, Transfer Learning, Grad-CAM, Python GitHub\n\u2022 Trained a deep learning-based skin disease classifier achieving robust performance across 10 dermatological\nconditions .\n\u2022 Incorporated Grad-CAM explainability to visually highlight affected skin regions, enhancing model interpretability\nfor healthcare applications.\nSkills\nTechnical Skills Soft Skills\nFrontend: React.js, Next.js, React Native, Flutter Sales & Marketing\nBackend: C, Python, Express.js, Node.js, Flask, FastAPI, ASP.NET Strategic Communication\nDatabases: MySQL, MongoDB Leadership\nML/DL: NLP, CNN, LSTM, OpenCV, RoboFlow Team Collaboration\nCloud/DevOps: AWS, GCP, Docker, Kafka Problem Solving\nTools: Git/GitHub, Figma, Canva, Arduino IDE",
+    "text": "Maanvi Shadakshari\nNavi Mumbai\n(cid:131)\n+91 7208014200 shadaksharimaanvi@gmail.com LinkedIn GitHub Behance\n#\n(cid:239)\n\u00a7\nEducation\nFr. Conceicao Rodrigues Institute of Technology (FCRIT), Vashi\nAug 2023 \u2013 Present\nBachelor of Technology in Computer Engineering CGPA: 9.08\nWork Experience\nKode & Co.\nJan 2025 \u2013 Present\nTech and Operations Lead Self-Employed\nFounded a digital solutions venture (Portfolio); led client-facing sales meetings for 4 closed projects (2 in pipeline),\n\u2022\napplying consultative sales and digital marketing strategies to understand requirements and close engagements.\nTranslated client business goals into technical specifications; sourced free/open-source tooling and zero-cost deployment\n\u2022\ninfrastructure to eliminate overhead costs entirely for small business clients.\nArchitected end-to-end solutions spanning web design, development, deployment, and post-launch support, maintaining a\n\u2022\n100% client retention rate across all completed engagements.\nCIBA, Mumbai\nJan 2026 \u2013 Present\nWeb Developer Mumbai\nSpearheading the official CIBA website featuring a centralised admin panel and role-based secure authentication;\n\u2022\nintegrated Google Calendar and Gmail APIs via GCP with OAuth 2.0 for automated scheduling and\ncommunication workflows.\nEliminated reliance on a third-party booking app by engineering a fully integrated booking system directly on the\n\u2022\nclient website, reducing end-to-end booking process time by \u02dc60% and consolidating all operations into a single\nplatform.\nGained hands-on exposure to GCP console, API enablement, OAuth consent configuration, and third-party API\n\u2022\nintegration within a production web environment, reducing setup time for future integrations by 30%.\nSVIK IT Solutions and Consultancy\nJun 2025 \u2013 Present\nSoftware Engineer Intern Navi Mumbai (Hybrid)\nEngineered a scalable full-stack Project Management System (live client product) with a modular architecture for\n\u2022\ncustomisable workflows and Role-Based Access Control (RBAC) supporting 5 to 100 users across flexible\nsubscription plans.\nArchitected the relational database schema from scratch \u2014 enforced normalised table structures, foreign key\n\u2022\nconstraints, multi-table joins, and indexed queries to ensure data integrity and efficient retrieval across all core\nmodules.\nIndian Institute of Technology, Bombay\nJun 2025 \u2013 Jul 2025\nStudent Intern Mumbai\nDevised a Video Amplification and Fault Diagnosis tool leveraging CSRT object tracking combined with Fourier\n\u2022\nTransform and Time History analysis to identify vibration anomalies across 3+ machinery types, reducing\nmanual inspection time by \u02dc40%.\nCrafted a custom GUI for real-time visualisation and diagnostics, enabling fault identification 2\u00d7 faster than\n\u2022\ntraditional methods and eliminating reliance on manual inspection for engineering teams.\nAltimetrik\nJun 2025 \u2013 Jul 2025\nSummer Intern Bengaluru\nCollaborated with the Data Engineering and Analytics team to deploy 2 LLM-powered chatbots, slashing internal\n\u2022\nknowledge retrieval time by \u02dc35%; streamlined process automation workflows covering 5+ repetitive tasks and\nstandardised technical documentation across 3 teams.\nZarvisGenix\nJun 2024 \u2013 Jul 2024\nMobile App Development Intern Remote\nLaunched a scan & pay feature integrated with Plaid sandbox, achieving a 30% reduction in transaction time;\n\u2022\nshipped production-ready API integrations in collaboration with design and backend teams, boosting overall dev\nefficiency by 15%.\nArtificial Intelligence & Deep Learning Club, FCRIT\nJun 2024 \u2013 Jun 2025\nJr. Technical Coordinator Navi Mumbai\nOrchestrated Webrush with 100+ participants, managing technical logistics and web infrastructure end-to-end;\n\u2022\nspearheaded the official HackQuinox website and multiple club platforms.\nAchievements\nTECHNOVA 2025 \u2013 Xavier Institute of Technology Jan 25\u201326, 2025\n1st place in App Development \u2014 built Roots, a community social media app connecting users via contacts, location,\n\u2022\nand family graphs.\nHACKTOBER FEST\u201924 \u2013 GDG, Ramrao Adik Institute of Technology October 2024\n3rd out of 25 teams (Day 1) and top 5 out of 12 teams (Day 2) in coding and DSA challenges.\n\u2022\nProjects\nAI Email Follow-up Automation System | Firebase, Node.js, React, LLMs, Grok API, Google Sheets API GitHub\nFormulated an AI-powered email automation system that generates and schedules contextual follow-ups based on\n\u2022\nuser interaction patterns.\nArchitected an event-driven workflow engine with trigger-based logic (no-reply, open, response) to automate\n\u2022\nmulti-step communication sequences.\nLeveraged a zero-cost scheduling pipeline to eliminate infrastructure overhead entirely, achieving full zero-cost\n\u2022\ndeployment for end users.\nAI-Powered Sales Forecasting System | FastAPI, Next.js, TensorFlow, LSTM, XGBoost, Recharts GitHub\nDeveloped a full-stack demand forecasting and inventory optimization platform using an ensemble model,\n\u2022\ngenerating 30-day forecasts with RMSE of 488 on real-world sales data.\nEngineered 30+ features including temporal signals and lag variables to capture demand patterns and improve\n\u2022\nforecasting accuracy.\nShipped an interactive dashboard visualising forecasts and model metrics (RMSE, MAE).\n\u2022\nSmart Resume Analyser | FastAPI, React, SpaCy, Sentence-BERT, Python GitHub\nPioneered an AI-powered ATS analyser that performs semantic matching between resumes and job descriptions.\n\u2022\nExecuted interpretable AI features by highlighting matched phrases and identifying missing concepts to explain\n\u2022\nscoring decisions.\nGenerated context-aware optimisation insights to improve resume relevance beyond keyword-based approaches.\n\u2022\nSkin Disease Classifier | PyTorch, CNN, MobileNetV2, Transfer Learning, Grad-CAM, Python GitHub\nTrained a deep learning-based skin disease classifier achieving robust performance across 10 dermatological\n\u2022\nconditions .\nIncorporated Grad-CAM explainability to visually highlight affected skin regions, enhancing model interpretability\n\u2022\nfor healthcare applications.\nSkills\nTechnical Skills Soft Skills\nFrontend: React.js, Next.js, React Native, Flutter Sales & Marketing\nBackend: C, Python, Express.js, Node.js, Flask, FastAPI, ASP.NET Strategic Communication\nDatabases: MySQL, MongoDB Leadership\nML/DL: NLP, CNN, LSTM, OpenCV, RoboFlow Team Collaboration\nCloud/DevOps: AWS, GCP, Docker, Kafka Problem Solving\nTools: Git/GitHub, Figma, Canva, Arduino IDE",
     "requirements": [
-        "procedure technologies pvt ltd"
+        "after incorporated",
+        "ai",
+        "ai bullet",
+        "api",
+        "app development",
+        "ats",
+        "before incorporated",
+        "ciba",
+        "csrt",
+        "deep learning",
+        "gcp",
+        "gmail",
+        "google calendar",
+        "hackquinox",
+        "llm",
+        "oauth",
+        "plaid",
+        "roots"
     ],
-    "job_description": "We are looking for a highly skilled and experienced professional to join our team as a Dummy Job To Test End To End Hiring Flow in Keka Hire. The ideal candidate will have a strong background in testing end-to-end hiring flows and be able to work effectively in a fast-paced environment.\r\nRoles and Responsibility\r\nCollaborate with cross-functional teams to identify and prioritize testing requirements.\r\nDevelop and execute comprehensive test plans to ensure high-quality hiring processes.\r\nIdentify and report defects or issues found during testing, working closely with development teams to resolve problems.\r\nAnalyze test results and provide recommendations for process improvements.\r\nStay up-to-date with industry trends and best practices in end-to-end hiring testing.\r\nJob Requirements\r\nStrong understanding of testing principles and methodologies.\r\nExperience with end-to-end hiring processes and workflows.\r\nExcellent analytical and problem-solving skills.\r\nAbility to work effectively in a team environment.\r\nStrong communication and interpersonal skills.\r\nFamiliarity with testing tools and technologies is an asset.\r\nCompany name: Procedure Technologies Pvt Ltd.\r\nIndustry: Any.\r\n",
+    "keyword_expansions": {
+        "after incorporated": [
+            "after incorporated"
+        ],
+        "ai": [
+            "ai"
+        ],
+        "ai bullet": [
+            "ai bullet"
+        ],
+        "api": [
+            "api",
+            "rest",
+            "restful",
+            "graphql",
+            "grpc",
+            "web services",
+            "sdk"
+        ],
+        "app development": [
+            "app development"
+        ],
+        "ats": [
+            "ats"
+        ],
+        "before incorporated": [
+            "before incorporated"
+        ],
+        "ciba": [
+            "ciba"
+        ],
+        "csrt": [
+            "csrt"
+        ],
+        "deep learning": [
+            "deep learning",
+            "machine learning",
+            "neural networks",
+            "ai",
+            "tensorflow",
+            "pytorch",
+            "keras"
+        ],
+        "gcp": [
+            "gcp",
+            "google cloud",
+            "cloud",
+            "aws",
+            "azure",
+            "bigquery"
+        ],
+        "gmail": [
+            "gmail"
+        ],
+        "google calendar": [
+            "google calendar"
+        ],
+        "hackquinox": [
+            "hackquinox"
+        ],
+        "llm": [
+            "llm"
+        ],
+        "oauth": [
+            "oauth"
+        ],
+        "plaid": [
+            "plaid"
+        ],
+        "roots": [
+            "roots"
+        ]
+    },
+    "job_description": "AI Bullet Rewrites\r\nBefore\r\nFounded a digital solutions venture (Portfolio); led client-facing sales meetings for 4 closed projects (2 in pipeline),\r\nAfter\r\nFounded a digital solutions venture (Portfolio); led client-facing sales meetings for 4 closed projects (2 in pipeline),\r\nBefore\r\nTranslated client business goals into technical specifications; sourced free/open-source tooling and zero-cost deployment\r\nAfter\r\nTranslated client business goals into technical specifications; sourced free/open-source tooling and zero-cost deployment\r\nBefore\r\nArchitected end-to-end solutions spanning web design, development, deployment, and post-launch support, maintaining a\r\nAfter\r\nArchitected end-to-end solutions spanning web design, development, deployment, and post-launch support, maintaining a\r\nBefore\r\nSpearheading the official CIBA website featuring a centralised admin panel and role-based secure authentication;\r\nAfter\r\nSpearheading the official CIBA website featuring a centralised admin panel and role-based secure authentication;\r\nBefore\r\nintegrated Google Calendar and Gmail APIs via GCP with OAuth 2.0 for automated scheduling and\r\nAfter\r\nintegrated Google Calendar and Gmail APIs via GCP with OAuth 2.0 for automated scheduling and\r\nBefore\r\nEliminated reliance on a third-party booking app by engineering a fully integrated booking system directly on the\r\nAfter\r\nEliminated reliance on a third-party booking app by engineering a fully integrated booking system directly on the\r\nBefore\r\nGained hands-on exposure to GCP console, API enablement, OAuth consent configuration, and third-party API\r\nAfter\r\nGained hands-on exposure to GCP console, API enablement, OAuth consent configuration, and third-party API\r\nBefore\r\nEngineered a scalable full-stack Project Management System (live client product) with a modular architecture for\r\nAfter\r\nEngineered a scalable full-stack Project Management System (live client product) with a modular architecture for\r\nBefore\r\nArchitected the relational database schema from scratch \u2014 enforced normalised table structures, foreign key\r\nAfter\r\nArchitected the relational database schema from scratch \u2014 enforced normalised table structures, foreign key\r\nBefore\r\nDevised a Video Amplification and Fault Diagnosis tool leveraging CSRT object tracking combined with Fourier\r\nAfter\r\nDevised a Video Amplification and Fault Diagnosis tool leveraging CSRT object tracking combined with Fourier\r\nBefore\r\nCrafted a custom GUI for real-time visualisation and diagnostics, enabling fault identification 2\u00d7 faster than\r\nAfter\r\nCrafted a custom GUI for real-time visualisation and diagnostics, enabling fault identification 2\u00d7 faster than\r\nBefore\r\nCollaborated with the Data Engineering and Analytics team to deploy 2 LLM-powered chatbots, slashing internal\r\nAfter\r\nCollaborated with the Data Engineering and Analytics team to deploy 2 LLM-powered chatbots, slashing internal\r\nBefore\r\nLaunched a scan & pay feature integrated with Plaid sandbox, achieving a 30% reduction in transaction time;\r\nAfter\r\nLaunched a scan & pay feature integrated with Plaid sandbox, achieving a 30% reduction in transaction time;\r\nBefore\r\nOrchestrated Webrush with 100+ participants, managing technical logistics and web infrastructure end-to-end;\r\nAfter\r\nOrchestrated Webrush with 100+ participants, managing technical logistics and web infrastructure end-to-end;\r\nBefore\r\nspearheaded the official HackQuinox website and multiple club platforms.\r\nAfter\r\nspearheaded the official HackQuinox website and multiple club platforms.\r\nBefore\r\n1st place in App Development \u2014 built Roots, a community social media app connecting users via contacts, location,\r\nAfter\r\n1st place in App Development \u2014 built Roots, a community social media app connecting users via contacts, location,\r\nBefore\r\n3rd out of 25 teams (Day 1) and top 5 out of 12 teams (Day 2) in coding and DSA challenges.\r\nAfter\r\n3rd out of 25 teams (Day 1) and top 5 out of 12 teams (Day 2) in coding and DSA challenges.\r\nBefore\r\nFormulated an AI-powered email automation system that generates and schedules contextual follow-ups based on\r\nAfter\r\nFormulated an AI-powered email automation system that generates and schedules contextual follow-ups based on\r\nBefore\r\nArchitected an event-driven workflow engine with trigger-based logic (no-reply, open, response) to automate\r\nAfter\r\nArchitected an event-driven workflow engine with trigger-based logic (no-reply, open, response) to automate\r\nBefore\r\nLeveraged a zero-cost scheduling pipeline to eliminate infrastructure overhead entirely, achieving full zero-cost\r\nAfter\r\nLeveraged a zero-cost scheduling pipeline to eliminate infrastructure overhead entirely, achieving full zero-cost\r\nBefore\r\nDeveloped a full-stack demand forecasting and inventory optimization platform using an ensemble model,\r\nAfter\r\nDeveloped a full-stack demand forecasting and inventory optimization platform using an ensemble model,\r\nBefore\r\nEngineered 30+ features including temporal signals and lag variables to capture demand patterns and improve\r\nAfter\r\nEngineered 30+ features including temporal signals and lag variables to capture demand patterns and improve\r\nBefore\r\nShipped an interactive dashboard visualising forecasts and model metrics (RMSE, MAE).\r\nAfter\r\nShipped an interactive dashboard visualising forecasts and model metrics (RMSE, MAE).\r\nBefore\r\nPioneered an AI-powered ATS analyser that performs semantic matching between resumes and job descriptions.\r\nAfter\r\nPioneered an AI-powered ATS analyser that performs semantic matching between resumes and job descriptions.\r\nBefore\r\nExecuted interpretable AI features by highlighting matched phrases and identifying missing concepts to explain\r\nAfter\r\nExecuted interpretable AI features by highlighting matched phrases and identifying missing concepts to explain\r\nBefore\r\nGenerated context-aware optimisation insights to improve resume relevance beyond keyword-based approaches.\r\nAfter\r\nGenerated context-aware optimisation insights to improve resume relevance beyond keyword-based approaches.\r\nBefore\r\nTrained a deep learning-based skin disease classifier achieving robust performance across 10 dermatological\r\nAfter\r\nTrained a deep learning-based skin disease classifier achieving robust performance across 10 dermatological\r\nBefore\r\nIncorporated Grad-CAM explainability to visually highlight affected skin regions, enhancing model interpretability\r\nAfter\r\nIncorporated Grad-CAM explainability to visually highlight affected skin regions, enhancing model interpretability",
     "predicted_category": "DIGITAL-MEDIA",
     "top_categories": [
         {
             "category": "DIGITAL-MEDIA",
-            "confidence": 0.6285
+            "confidence": 0.6182
         },
         {
             "category": "CONSULTANT",
-            "confidence": 0.6119
+            "confidence": 0.6123
         },
         {
             "category": "BPO",
-            "confidence": 0.606
+            "confidence": 0.6106
         }
     ],
     "dataset_used": true,

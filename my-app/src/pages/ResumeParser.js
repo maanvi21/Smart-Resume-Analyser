@@ -138,21 +138,22 @@ function ResumeParser() {
             </div>
           </div>
 
-          {/* ── Dataset: Category Prediction ── */}
-          {results.dataset_used && results.predicted_category && (
+          {/* ── Category Prediction (Gemini + Embeddings) ── */}
+          {results.predicted_category && (
             <div className="section">
-              <h3>📊 Dataset-Predicted Category</h3>
+              <h3>📊 Resume Category</h3>
               <div className="category-prediction">
                 <span className="predicted-badge">{results.predicted_category}</span>
-                <p className="category-sub">
-                  Based on {results.category_sample_size > 0
-                    ? `${results.category_sample_size} similar resumes`
-                    : 'dataset comparison'}
-                </p>
+                <span className={`confidence-pill conf-${results.category_confidence || 'low'}`}>
+                  {results.category_confidence || 'low'} confidence
+                </span>
               </div>
+              {results.category_reasoning && (
+                <p className="category-reasoning">🤖 {results.category_reasoning}</p>
+              )}
               {results.top_categories && results.top_categories.length > 0 && (
                 <div className="top-categories">
-                  <p className="section-sublabel">Top category matches:</p>
+                  <p className="section-sublabel">Embedding model top-3:</p>
                   <div className="score-list">
                     {results.top_categories.map(({ category, confidence }) => (
                       <div key={category} className="score-row">
@@ -160,10 +161,7 @@ function ResumeParser() {
                         <div className="score-bar-bg">
                           <div
                             className="score-bar-fill"
-                            style={{
-                              width: `${Math.round(confidence * 100)}%`,
-                              background: '#4A6FA5'
-                            }}
+                            style={{ width: `${Math.round(confidence * 100)}%`, background: '#4A6FA5' }}
                           />
                         </div>
                         <span className="score-pct">{Math.round(confidence * 100)}%</span>
