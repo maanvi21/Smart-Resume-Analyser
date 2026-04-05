@@ -1,23 +1,14 @@
 {
     "semantic_match_percentage": 0,
+    "adjusted_match_percentage": 6,
+    "category_bonus_pct": 6.3,
+    "category_bonus_applied": true,
     "matched_requirements": [],
     "unmatched_requirements": [
-        "\ud83d\udee0\ufe0f key responsibilities\r\ndesign",
-        "develop",
-        "and maintain scalable web applications\r\nbuild restful apis and integrate third-party services\r\ncollaborate with frontend developers",
-        "designers",
-        "and product managers\r\nwrite clean",
-        "maintainable",
-        "and efficient code\r\ndebug and optimize applications for performance and scalability\r\nparticipate in code reviews and agile development processes\r\nwork with databases and ensure data integrity\r\n\ud83e\udde0 required skills\r\nstrong proficiency in javascript\r\nexperience with node.js and express.js\r\nknowledge of mongodb / mysql\r\nunderstanding of rest apis\r\nfamiliarity with git & github\r\nbasic understanding of data structures & algorithms"
+        "procedure technologies pvt ltd"
     ],
     "per_requirement_scores": {
-        "\ud83d\udee0\ufe0f key responsibilities\r\ndesign": 0.2261,
-        "develop": 0.3309,
-        "and maintain scalable web applications\r\nbuild restful apis and integrate third-party services\r\ncollaborate with frontend developers": 0.2815,
-        "designers": 0.2362,
-        "and product managers\r\nwrite clean": 0.2504,
-        "maintainable": 0.1575,
-        "and efficient code\r\ndebug and optimize applications for performance and scalability\r\nparticipate in code reviews and agile development processes\r\nwork with databases and ensure data integrity\r\n\ud83e\udde0 required skills\r\nstrong proficiency in javascript\r\nexperience with node.js and express.js\r\nknowledge of mongodb / mysql\r\nunderstanding of rest apis\r\nfamiliarity with git & github\r\nbasic understanding of data structures & algorithms": 0.3436
+        "procedure technologies pvt ltd": 0.3347
     },
     "suitable": false,
     "entities": {
@@ -103,12 +94,90 @@
             "Database"
         ]
     },
-    "rewritten_bullets": [],
+    "rewritten_bullets": [
+        {
+            "original": "Founded a digital solutions venture (Portfolio); led client-facing sales meetings for 4 closed projects (2 in pipeline),",
+            "improved": "Founder of a digital solutions venture (Portfolio); led client-facing sales meetings for 4 closed projects (2 in pipeline);"
+        },
+        {
+            "original": "Translated client business goals into technical specifications; sourced free/open-source tooling and zero-cost deployment",
+            "improved": "Translated client business goals into technical specifications; sourced free/open-source tooling and zero-cost deployment"
+        },
+        {
+            "original": "Architected end-to-end solutions spanning web design, development, deployment, and post-launch support, maintaining a",
+            "improved": "Architected end-to-end solutions spanning web design, development, deployment, and post-launch support, maintaining a scalable web design and development environment."
+        },
+        {
+            "original": "Spearheading the official CIBA website featuring a centralised admin panel and role-based secure authentication;",
+            "improved": "Spearheading the official CIBA website featuring a centralised admin panel and role-based secure authentication;"
+        },
+        {
+            "original": "Eliminated reliance on a third-party booking app by engineering a fully integrated booking system directly on the",
+            "improved": "Booking app: Eliminated reliance on a third-party booking app by engineering a fully integrated booking system directly on the Booking app"
+        },
+        {
+            "original": "Gained hands-on exposure to GCP console, API enablement, OAuth consent configuration, and third-party API",
+            "improved": "Gained hands-on exposure to GCP console, API enablement, OAuth consent configuration, and third-party API"
+        },
+        {
+            "original": "Engineered a scalable full-stack Project Management System (live client product) with a modular architecture for",
+            "improved": "Project Management Systems"
+        },
+        {
+            "original": "Architected the relational database schema from scratch \u2014 enforced normalised table structures, foreign key",
+            "improved": "Architected the relational database schema from scratch \u2014 enforced normalised table structures, foreign key"
+        },
+        {
+            "original": "Devised a Video Amplification and Fault Diagnosis tool leveraging CSRT object tracking combined with Fourier",
+            "improved": "Devised a Video Amplification and Fault Diagnosis tool leveraging CSRT object tracking combined with Fourier"
+        },
+        {
+            "original": "Crafted a custom GUI for real-time visualisation and diagnostics, enabling fault identification 2\u00d7 faster than",
+            "improved": "Developed a custom GUI for real-time visualisation and diagnostics, enabling fault identification 2 faster than conventional diagnostics."
+        }
+    ],
     "missing_skill_suggestions": [
-        "[\ud83d\udee0\ufe0f key responsibilities\r\ndesign] re-design the resume",
-        "[develop] Make sure the candidate has a strong resume",
-        "[and maintain scalable web applications\r\nbuild restful apis and integrate third-party services\r\ncollaborate with frontend developers] Build a strong resume",
-        "[designers] Make sure the candidate has a resume with a strong design profile.",
-        "[and product managers\r\nwrite clean] Make sure the resume is clean"
+        {
+            "skill": "procedure technologies pvt ltd",
+            "suggestion": "Add procedure technologies pvt ltd experience to your resume."
+        }
+    ],
+    "predicted_category": "DIGITAL-MEDIA",
+    "top_categories": [
+        {
+            "category": "DIGITAL-MEDIA",
+            "confidence": 0.6285
+        },
+        {
+            "category": "CONSULTANT",
+            "confidence": 0.6119
+        },
+        {
+            "category": "BPO",
+            "confidence": 0.606
+        }
+    ],
+    "dataset_used": true,
+    "category_alignment_score": 0.6285,
+    "benchmark_skills": [
+        {
+            "skill": "html",
+            "frequency_pct": 42.7
+        }
+    ],
+    "category_sample_size": 96,
+    "similar_resumes": [
+        {
+            "similarity": 0.6122,
+            "snippet": "IMPLEMENTATION CONSULTANT       Summary    Results-oriented digital marketing professional with a background in project management and digital advertising. Experienced with various email platforms (Sa\u2026"
+        },
+        {
+            "similarity": 0.5966,
+            "snippet": "DIGITAL MARKETING SPECIALIST             Highlights          Strong Digital Marketing experience using Social Media platforms  Proficient in the following programs, tools, and applications:  Slack, Go\u2026"
+        },
+        {
+            "similarity": 0.5944,
+            "snippet": "SR DIGITAL ANALYTICS MANAGER         Summary      Mindful innovator with a proven track record in delivering digital analytics solutions to configure fundamentally sound framework for multiple website\u2026"
+        }
     ]
 }
