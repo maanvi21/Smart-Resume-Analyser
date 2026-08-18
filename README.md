@@ -2,6 +2,10 @@
 
 An intelligent resume screening API built with **FastAPI**, **HuggingFace Transformers**, and **Gemini 2.5 Flash**. Upload a PDF resume and a job description — the pipeline semantically matches skills, extracts named entities, rewrites bullet points, and generates grounded, dataset-backed suggestions for missing skills.
 
+![Architecture diagram](./docs/architecture.svg)
+
+A single FastAPI service, deliberately not split into microservices — see [Design decisions](#design-decisions) for why.
+
 ---
 
 ## Features
@@ -206,6 +210,27 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```
 
 Gemini calls are always remote regardless of hardware.
+
+---
+
+## Design decisions
+
+**Why regex-first, NER-fallback for skill extraction, not NER alone.** A curated regex vocabulary catches known tech terms instantly and precisely — no model inference needed. `dslim/bert-base-NER` only runs afterward, to catch proper-noun tools and products the fixed vocabulary can't anticipate. Running NER alone would be slower on every request and less precise for well-known terms; regex alone would miss anything not already in the list. The blocklist in `resume.py` (`##k`, `##s`, generic words like "experience") exists because BERT's NER genuinely returns subword fragments and generic filler as false-positive "skills" in practice — that list was built from real bad output, not written speculatively.
+
+**Why bounding-box PDF reconstruction instead of `pdfplumber`'s default `extract_text()`.** The default extractor wraps text at the PDF's internal line breaks, so one visual bullet point spanning two lines arrives as two separate, incomplete strings. Both the skill-matching and the Gemini bullet-rewriting steps need a *complete* bullet to work with — a truncated fragment sent to Gemini for rewriting has nothing to actually improve, so it just gets echoed back unchanged. Grouping words by their y-coordinate and reconstructing each line before any NLP touches the text fixes this at the source instead of patching around it downstream.
+
+**Why dataset-grounded prompting instead of asking Gemini directly.** Before asking Gemini to suggest a missing skill, `_extract_skill_context_from_dataset()` first pulls real sentences from same-category resumes in the Kaggle dataset that already mention that skill, and injects them into the prompt as examples. Asking an LLM cold for "how should I add Docker to my resume" gets generic advice ("consider adding Docker experience"). Grounding the prompt in how real candidates in the same category actually phrase it produces suggestions tied to real, specific patterns instead of boilerplate — the same reasoning behind retrieval-augmented generation, applied to career advice instead of Q&A.
+
+**Why local embeddings (MiniLM) for matching, but a hosted model (Gemini) for generation.** Semantic matching, category prediction, and similarity search all run the embedding model repeatedly *within a single request* — once per requirement, once per category centroid, once per candidate resume compared. That volume needs to be fast and free, which is exactly what a small local model gives you. Gemini is called a fixed 3 times per analysis (classify, rewrite bullets, suggest skills) — low enough volume to justify a hosted model that's far more capable at open-ended generation than anything practical to self-host here.
+
+**Why one FastAPI service, not split into microservices.** This is a bounded, sequential pipeline — upload a resume, run analysis, return results — with no bursty async load and no component that needs to scale independently of the others. The [Production RAG Pipeline](https://github.com/maanvi21/production-rag-pipeline) project splits into services because ingestion is bursty and shouldn't block query latency; nothing here has that same pressure. Splitting this into services anyway would add operational complexity (multiple deploys, network calls where function calls suffice) without a real problem it solves.
+
+## Known limitations
+
+- **The handoff between `/extract-features` and `/nlp-module` is a JSON file on local disk** (`uploaded_resume.json`, then `nlp_results.json`), not a database or session store. That means it only works correctly for one user at a time — if two people hit this API concurrently, their requests can clobber each other's intermediate file. Fine for a personal-use demo; would need a real per-request identifier (and a datastore instead of a bare file) to serve multiple users safely.
+- **No retry or backoff on the Gemini calls.** A transient failure on any of the three Gemini calls just raises and gets caught by the generic exception handler — no automatic retry. Same honest gap as the RAG pipeline project's Groq calls.
+- **No auth.** Anyone who can reach the API can upload a resume and consume Gemini quota.
+- **Results aren't persisted anywhere beyond the two local JSON files** (which are gitignored, not committed) — there's no history of past analyses.
 
 ---
 

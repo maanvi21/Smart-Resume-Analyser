@@ -1,0 +1,113 @@
+<svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" font-family="Calibri, Candara, Segoe UI, Optima, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#404040"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" fill="#ffffff"/>
+
+  <text x="600" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1f1f">Smart Resume Analyzer – Architecture</text>
+  <text x="600" y="54" text-anchor="middle" font-size="12" fill="#404040">single FastAPI service, two-stage pipeline (extract-features then nlp-module)</text>
+
+  <text x="30" y="92" font-size="12" font-weight="700" fill="#1f4e79" text-decoration="underline">Stage 1</text>
+  <text x="30" y="430" font-size="12" font-weight="700" fill="#553c9a" text-decoration="underline">Stage 2</text>
+
+  <!-- Arrows -->
+  <path d="M 185 300 L 258 130" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <path d="M 185 340 L 258 470" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <path d="M 258 480 L 185 350" fill="none" stroke="#808080" stroke-width="1.25" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <path d="M 365 160 L 365 248" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <path d="M 365 300 L 365 398" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+
+  <path d="M 480 110 L 628 95" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <path d="M 480 130 L 628 205" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+
+  <path d="M 480 425 L 628 95" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <path d="M 480 445 L 628 210" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+  <path d="M 480 465 L 628 435" fill="none" stroke="#404040" stroke-width="1.25" marker-end="url(#arrow)"/>
+
+  <!-- Edge labels -->
+  <g font-size="10" fill="#262626">
+    <rect x="188" y="195" width="150" height="13" fill="#ffffff"/>
+    <text x="191" y="204">POST /extract-features</text>
+
+    <rect x="188" y="395" width="126" height="13" fill="#ffffff"/>
+    <text x="191" y="404">GET /nlp-module</text>
+
+    <rect x="95" y="405" width="94" height="13" fill="#ffffff"/>
+    <text x="98" y="414" fill="#595959">results JSON</text>
+
+    <rect x="372" y="220" width="66" height="13" fill="#ffffff"/>
+    <text x="375" y="229">writes</text>
+
+    <rect x="372" y="345" width="60" height="13" fill="#ffffff"/>
+    <text x="375" y="354">reads</text>
+
+    <rect x="486" y="90" width="120" height="13" fill="#ffffff"/>
+    <text x="489" y="99">predict category</text>
+
+    <rect x="486" y="155" width="130" height="13" fill="#ffffff"/>
+    <text x="489" y="164">skill benchmark</text>
+
+    <rect x="486" y="245" width="130" height="13" fill="#ffffff"/>
+    <text x="489" y="254">match + NER + similar</text>
+
+    <rect x="486" y="315" width="150" height="13" fill="#ffffff"/>
+    <text x="489" y="324">dataset-grounded snippets</text>
+
+    <rect x="486" y="415" width="150" height="13" fill="#ffffff"/>
+    <text x="489" y="424">classify + rewrite + suggest</text>
+  </g>
+
+  <!-- Boxes -->
+  <rect x="30" y="265" width="150" height="70" rx="4" fill="#F2F2F2" stroke="#595959" stroke-width="1.25"/>
+  <text x="105" y="295" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f1f1f">Client</text>
+  <text x="105" y="312" text-anchor="middle" font-size="10.5" fill="#404040">React app (my-app)</text>
+
+  <rect x="260" y="80" width="220" height="80" rx="4" fill="#DAE3F3" stroke="#2E5395" stroke-width="1.25"/>
+  <text x="370" y="106" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f1f1f">resume.py</text>
+  <text x="370" y="122" text-anchor="middle" font-size="10.5" fill="#1f1f1f">POST /extract-features</text>
+  <text x="370" y="137" text-anchor="middle" font-size="9.5" fill="#333333">PDF bbox extract -&gt; JD skill regex/NER</text>
+  <text x="370" y="150" text-anchor="middle" font-size="9.5" fill="#333333">-&gt; synonym expand -&gt; category predict</text>
+
+  <rect x="300" y="250" width="150" height="50" rx="4" stroke-dasharray="4,3" fill="#F2F2F2" stroke="#808080" stroke-width="1.25"/>
+  <text x="375" y="270" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1f1f1f">uploaded_resume.json</text>
+  <text x="375" y="285" text-anchor="middle" font-size="9" fill="#595959">local disk handoff file</text>
+
+  <rect x="260" y="398" width="220" height="92" rx="4" fill="#E4DFEC" stroke="#5F497A" stroke-width="1.25"/>
+  <text x="370" y="422" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f1f1f">nlp.py</text>
+  <text x="370" y="438" text-anchor="middle" font-size="10.5" fill="#1f1f1f">GET /nlp-module</text>
+  <text x="370" y="452" text-anchor="middle" font-size="9.5" fill="#333333">semantic match -&gt; NER -&gt; bullet rewrite</text>
+  <text x="370" y="465" text-anchor="middle" font-size="9.5" fill="#333333">-&gt; grounded skill suggestions</text>
+  <text x="370" y="478" text-anchor="middle" font-size="9.5" fill="#333333">-&gt; writes nlp_results.json</text>
+
+  <rect x="630" y="60" width="190" height="64" rx="4" fill="#E2EFDA" stroke="#375623" stroke-width="1.25"/>
+  <text x="725" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="#1f1f1f">MiniLM-L6-v2 + BERT-NER</text>
+  <text x="725" y="103" text-anchor="middle" font-size="10" fill="#1f1f1f">local models (in-process)</text>
+
+  <rect x="630" y="180" width="190" height="60" rx="4" fill="#E2EFDA" stroke="#375623" stroke-width="1.25"/>
+  <text x="725" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="#1f1f1f">Kaggle Resume Dataset</text>
+  <text x="725" y="221" text-anchor="middle" font-size="10" fill="#1f1f1f">CSV, loaded once (in-memory)</text>
+
+  <rect x="630" y="400" width="190" height="64" rx="4" stroke-dasharray="5,3" fill="#FFF2CC" stroke="#BF8F00" stroke-width="1.25"/>
+  <text x="725" y="427" text-anchor="middle" font-size="13" font-weight="700" fill="#1f1f1f">Gemini 2.5 Flash</text>
+  <text x="725" y="443" text-anchor="middle" font-size="10" fill="#1f1f1f">hosted LLM (external)</text>
+
+  <!-- Legend -->
+  <g transform="translate(965,595)">
+    <rect x="0" y="0" width="210" height="112" fill="#ffffff" stroke="#808080" stroke-width="1"/>
+    <text x="10" y="17" font-size="10.5" font-weight="700" fill="#1f1f1f">Legend</text>
+    <rect x="10" y="27" width="15" height="15" fill="#DAE3F3" stroke="#2E5395" stroke-width="1"/>
+    <text x="31" y="39" font-size="10.5" fill="#1f1f1f">stage 1 endpoint</text>
+    <rect x="10" y="50" width="15" height="15" fill="#E4DFEC" stroke="#5F497A" stroke-width="1"/>
+    <text x="31" y="62" font-size="10.5" fill="#1f1f1f">stage 2 endpoint</text>
+    <rect x="10" y="73" width="15" height="15" fill="#E2EFDA" stroke="#375623" stroke-width="1"/>
+    <text x="31" y="85" font-size="10.5" fill="#1f1f1f">local model / dataset</text>
+    <rect x="10" y="96" width="15" height="15" fill="#FFF2CC" stroke="#BF8F00" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="31" y="108" font-size="10.5" fill="#1f1f1f">external hosted API</text>
+  </g>
+
+  <line x1="20" y1="380" x2="1180" y2="380" stroke="#bfbfbf" stroke-width="1" stroke-dasharray="2,3"/>
+</svg>

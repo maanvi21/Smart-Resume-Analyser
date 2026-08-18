@@ -1,2 +1,7 @@
 /venv
 /Resume.csv
+.env
+uploaded_resume.json
+nlp_results.json
+__pycache__/
+*.pyc
